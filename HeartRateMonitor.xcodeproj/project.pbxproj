@@ -1,0 +1,668 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BCF30E972696818100CEDDCC /* HeartRateMonitorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF30E962696818100CEDDCC /* HeartRateMonitorApp.swift */; };
+		BCF30E992696818100CEDDCC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF30E982696818100CEDDCC /* ContentView.swift */; };
+		BCF30E9B2696818300CEDDCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF30E9A2696818300CEDDCC /* Assets.xcassets */; };
+		BCF30E9E2696818300CEDDCC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF30E9D2696818300CEDDCC /* Preview Assets.xcassets */; };
+		BCF30EA32696818300CEDDCC /* HeartRateMonitor WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = BCF30EA22696818300CEDDCC /* HeartRateMonitor WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BCF30EA82696818300CEDDCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF30EA72696818300CEDDCC /* Assets.xcassets */; };
+		BCF30EAF2696818300CEDDCC /* HeartRateMonitor WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BCF30EAE2696818300CEDDCC /* HeartRateMonitor WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BCF30EB62696818300CEDDCC /* HeartRateMonitorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF30EB52696818300CEDDCC /* HeartRateMonitorApp.swift */; };
+		BCF30EB82696818300CEDDCC /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF30EB72696818300CEDDCC /* ComplicationController.swift */; };
+		BCF30EBA2696818400CEDDCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF30EB92696818400CEDDCC /* Assets.xcassets */; };
+		BCF30EBD2696818400CEDDCC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF30EBC2696818400CEDDCC /* Preview Assets.xcassets */; };
+		BCF30ECF2696823B00CEDDCC /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF30ECE2696823B00CEDDCC /* HealthKit.framework */; };
+		BCF30ED1269682FB00CEDDCC /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF30ED0269682FB00CEDDCC /* WorkoutManager.swift */; };
+		BCF30ED92696837800CEDDCC /* PagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF30ED42696837800CEDDCC /* PagingView.swift */; };
+		BCF30EDA2696837800CEDDCC /* ElapsedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF30ED52696837800CEDDCC /* ElapsedTimeView.swift */; };
+		BCF30EDB2696837800CEDDCC /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF30ED62696837800CEDDCC /* StartView.swift */; };
+		BCF30EDC2696837800CEDDCC /* MetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF30ED72696837800CEDDCC /* MetricsView.swift */; };
+		BCF30EDD2696837800CEDDCC /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF30ED82696837800CEDDCC /* ControlsView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BCF30EA42696818300CEDDCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCF30E8B2696818000CEDDCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BCF30EA12696818300CEDDCC;
+			remoteInfo = "HeartRateMonitor WatchKit App";
+		};
+		BCF30EB02696818300CEDDCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCF30E8B2696818000CEDDCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BCF30EAD2696818300CEDDCC;
+			remoteInfo = "HeartRateMonitor WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BCF30EC42696818400CEDDCC /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				BCF30EAF2696818300CEDDCC /* HeartRateMonitor WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCF30EC82696818400CEDDCC /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				BCF30EA32696818300CEDDCC /* HeartRateMonitor WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		BCF30E932696818100CEDDCC /* HeartRateMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeartRateMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCF30E962696818100CEDDCC /* HeartRateMonitorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateMonitorApp.swift; sourceTree = "<group>"; };
+		BCF30E982696818100CEDDCC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BCF30E9A2696818300CEDDCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BCF30E9D2696818300CEDDCC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BCF30E9F2696818300CEDDCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCF30EA22696818300CEDDCC /* HeartRateMonitor WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HeartRateMonitor WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCF30EA72696818300CEDDCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BCF30EA92696818300CEDDCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCF30EAE2696818300CEDDCC /* HeartRateMonitor WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HeartRateMonitor WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCF30EB52696818300CEDDCC /* HeartRateMonitorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateMonitorApp.swift; sourceTree = "<group>"; };
+		BCF30EB72696818300CEDDCC /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		BCF30EB92696818400CEDDCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BCF30EBC2696818400CEDDCC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BCF30EBE2696818400CEDDCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCF30ECC2696823B00CEDDCC /* HeartRateMonitor WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HeartRateMonitor WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		BCF30ECE2696823B00CEDDCC /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.4.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		BCF30ED0269682FB00CEDDCC /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
+		BCF30ED42696837800CEDDCC /* PagingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingView.swift; sourceTree = "<group>"; };
+		BCF30ED52696837800CEDDCC /* ElapsedTimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElapsedTimeView.swift; sourceTree = "<group>"; };
+		BCF30ED62696837800CEDDCC /* StartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		BCF30ED72696837800CEDDCC /* MetricsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetricsView.swift; sourceTree = "<group>"; };
+		BCF30ED82696837800CEDDCC /* ControlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BCF30E902696818100CEDDCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCF30EAB2696818300CEDDCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCF30ECF2696823B00CEDDCC /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BCF30E8A2696818000CEDDCC = {
+			isa = PBXGroup;
+			children = (
+				BCF30E952696818100CEDDCC /* HeartRateMonitor */,
+				BCF30EA62696818300CEDDCC /* HeartRateMonitor WatchKit App */,
+				BCF30EB22696818300CEDDCC /* HeartRateMonitor WatchKit Extension */,
+				BCF30E942696818100CEDDCC /* Products */,
+				BCF30ECD2696823B00CEDDCC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BCF30E942696818100CEDDCC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BCF30E932696818100CEDDCC /* HeartRateMonitor.app */,
+				BCF30EA22696818300CEDDCC /* HeartRateMonitor WatchKit App.app */,
+				BCF30EAE2696818300CEDDCC /* HeartRateMonitor WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BCF30E952696818100CEDDCC /* HeartRateMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				BCF30E962696818100CEDDCC /* HeartRateMonitorApp.swift */,
+				BCF30E982696818100CEDDCC /* ContentView.swift */,
+				BCF30E9A2696818300CEDDCC /* Assets.xcassets */,
+				BCF30E9F2696818300CEDDCC /* Info.plist */,
+				BCF30E9C2696818300CEDDCC /* Preview Content */,
+			);
+			path = HeartRateMonitor;
+			sourceTree = "<group>";
+		};
+		BCF30E9C2696818300CEDDCC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				BCF30E9D2696818300CEDDCC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BCF30EA62696818300CEDDCC /* HeartRateMonitor WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				BCF30EA72696818300CEDDCC /* Assets.xcassets */,
+				BCF30EA92696818300CEDDCC /* Info.plist */,
+			);
+			path = "HeartRateMonitor WatchKit App";
+			sourceTree = "<group>";
+		};
+		BCF30EB22696818300CEDDCC /* HeartRateMonitor WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BCF30EB92696818400CEDDCC /* Assets.xcassets */,
+				BCF30EBB2696818400CEDDCC /* Preview Content */,
+				BCF30ED32696832200CEDDCC /* Views */,
+				BCF30EB72696818300CEDDCC /* ComplicationController.swift */,
+				BCF30ECC2696823B00CEDDCC /* HeartRateMonitor WatchKit Extension.entitlements */,
+				BCF30EB52696818300CEDDCC /* HeartRateMonitorApp.swift */,
+				BCF30EBE2696818400CEDDCC /* Info.plist */,
+				BCF30ED0269682FB00CEDDCC /* WorkoutManager.swift */,
+			);
+			path = "HeartRateMonitor WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		BCF30EBB2696818400CEDDCC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				BCF30EBC2696818400CEDDCC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BCF30ECD2696823B00CEDDCC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BCF30ECE2696823B00CEDDCC /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BCF30ED32696832200CEDDCC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BCF30ED82696837800CEDDCC /* ControlsView.swift */,
+				BCF30ED52696837800CEDDCC /* ElapsedTimeView.swift */,
+				BCF30ED72696837800CEDDCC /* MetricsView.swift */,
+				BCF30ED42696837800CEDDCC /* PagingView.swift */,
+				BCF30ED62696837800CEDDCC /* StartView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BCF30E922696818100CEDDCC /* HeartRateMonitor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCF30EC92696818400CEDDCC /* Build configuration list for PBXNativeTarget "HeartRateMonitor" */;
+			buildPhases = (
+				BCF30E8F2696818100CEDDCC /* Sources */,
+				BCF30E902696818100CEDDCC /* Frameworks */,
+				BCF30E912696818100CEDDCC /* Resources */,
+				BCF30EC82696818400CEDDCC /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BCF30EA52696818300CEDDCC /* PBXTargetDependency */,
+			);
+			name = HeartRateMonitor;
+			productName = HeartRateMonitor;
+			productReference = BCF30E932696818100CEDDCC /* HeartRateMonitor.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BCF30EA12696818300CEDDCC /* HeartRateMonitor WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCF30EC52696818400CEDDCC /* Build configuration list for PBXNativeTarget "HeartRateMonitor WatchKit App" */;
+			buildPhases = (
+				BCF30EA02696818300CEDDCC /* Resources */,
+				BCF30EC42696818400CEDDCC /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BCF30EB12696818300CEDDCC /* PBXTargetDependency */,
+			);
+			name = "HeartRateMonitor WatchKit App";
+			productName = "HeartRateMonitor WatchKit App";
+			productReference = BCF30EA22696818300CEDDCC /* HeartRateMonitor WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		BCF30EAD2696818300CEDDCC /* HeartRateMonitor WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCF30EC12696818400CEDDCC /* Build configuration list for PBXNativeTarget "HeartRateMonitor WatchKit Extension" */;
+			buildPhases = (
+				BCF30EAA2696818300CEDDCC /* Sources */,
+				BCF30EAB2696818300CEDDCC /* Frameworks */,
+				BCF30EAC2696818300CEDDCC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HeartRateMonitor WatchKit Extension";
+			productName = "HeartRateMonitor WatchKit Extension";
+			productReference = BCF30EAE2696818300CEDDCC /* HeartRateMonitor WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BCF30E8B2696818000CEDDCC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					BCF30E922696818100CEDDCC = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					BCF30EA12696818300CEDDCC = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					BCF30EAD2696818300CEDDCC = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = BCF30E8E2696818000CEDDCC /* Build configuration list for PBXProject "HeartRateMonitor" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BCF30E8A2696818000CEDDCC;
+			productRefGroup = BCF30E942696818100CEDDCC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BCF30E922696818100CEDDCC /* HeartRateMonitor */,
+				BCF30EA12696818300CEDDCC /* HeartRateMonitor WatchKit App */,
+				BCF30EAD2696818300CEDDCC /* HeartRateMonitor WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BCF30E912696818100CEDDCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCF30E9E2696818300CEDDCC /* Preview Assets.xcassets in Resources */,
+				BCF30E9B2696818300CEDDCC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCF30EA02696818300CEDDCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCF30EA82696818300CEDDCC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCF30EAC2696818300CEDDCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCF30EBD2696818400CEDDCC /* Preview Assets.xcassets in Resources */,
+				BCF30EBA2696818400CEDDCC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BCF30E8F2696818100CEDDCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCF30E992696818100CEDDCC /* ContentView.swift in Sources */,
+				BCF30E972696818100CEDDCC /* HeartRateMonitorApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCF30EAA2696818300CEDDCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCF30EDD2696837800CEDDCC /* ControlsView.swift in Sources */,
+				BCF30ED1269682FB00CEDDCC /* WorkoutManager.swift in Sources */,
+				BCF30EB62696818300CEDDCC /* HeartRateMonitorApp.swift in Sources */,
+				BCF30ED92696837800CEDDCC /* PagingView.swift in Sources */,
+				BCF30EDA2696837800CEDDCC /* ElapsedTimeView.swift in Sources */,
+				BCF30EB82696818300CEDDCC /* ComplicationController.swift in Sources */,
+				BCF30EDC2696837800CEDDCC /* MetricsView.swift in Sources */,
+				BCF30EDB2696837800CEDDCC /* StartView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BCF30EA52696818300CEDDCC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BCF30EA12696818300CEDDCC /* HeartRateMonitor WatchKit App */;
+			targetProxy = BCF30EA42696818300CEDDCC /* PBXContainerItemProxy */;
+		};
+		BCF30EB12696818300CEDDCC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BCF30EAD2696818300CEDDCC /* HeartRateMonitor WatchKit Extension */;
+			targetProxy = BCF30EB02696818300CEDDCC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		BCF30EBF2696818400CEDDCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BCF30EC02696818400CEDDCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		BCF30EC22696818400CEDDCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "HeartRateMonitor WatchKit Extension/HeartRateMonitor WatchKit Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"HeartRateMonitor WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = V9DQU22C7B;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "HeartRateMonitor WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsunderehq.HeartRateMonitor.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		BCF30EC32696818400CEDDCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "HeartRateMonitor WatchKit Extension/HeartRateMonitor WatchKit Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"HeartRateMonitor WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = V9DQU22C7B;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "HeartRateMonitor WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsunderehq.HeartRateMonitor.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Release;
+		};
+		BCF30EC62696818400CEDDCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V9DQU22C7B;
+				IBSC_MODULE = HeartRateMonitor_WatchKit_Extension;
+				INFOPLIST_FILE = "HeartRateMonitor WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsunderehq.HeartRateMonitor.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		BCF30EC72696818400CEDDCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V9DQU22C7B;
+				IBSC_MODULE = HeartRateMonitor_WatchKit_Extension;
+				INFOPLIST_FILE = "HeartRateMonitor WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsunderehq.HeartRateMonitor.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Release;
+		};
+		BCF30ECA2696818400CEDDCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"HeartRateMonitor/Preview Content\"";
+				DEVELOPMENT_TEAM = V9DQU22C7B;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = HeartRateMonitor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsunderehq.HeartRateMonitor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BCF30ECB2696818400CEDDCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"HeartRateMonitor/Preview Content\"";
+				DEVELOPMENT_TEAM = V9DQU22C7B;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = HeartRateMonitor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsunderehq.HeartRateMonitor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BCF30E8E2696818000CEDDCC /* Build configuration list for PBXProject "HeartRateMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCF30EBF2696818400CEDDCC /* Debug */,
+				BCF30EC02696818400CEDDCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCF30EC12696818400CEDDCC /* Build configuration list for PBXNativeTarget "HeartRateMonitor WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCF30EC22696818400CEDDCC /* Debug */,
+				BCF30EC32696818400CEDDCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCF30EC52696818400CEDDCC /* Build configuration list for PBXNativeTarget "HeartRateMonitor WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCF30EC62696818400CEDDCC /* Debug */,
+				BCF30EC72696818400CEDDCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCF30EC92696818400CEDDCC /* Build configuration list for PBXNativeTarget "HeartRateMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCF30ECA2696818400CEDDCC /* Debug */,
+				BCF30ECB2696818400CEDDCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BCF30E8B2696818000CEDDCC /* Project object */;
+}
