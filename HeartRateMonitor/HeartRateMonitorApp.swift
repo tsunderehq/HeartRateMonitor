@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct HeartRateMonitorApp: App {
-    var body: some Scene {
+    @StateObject var networkClient = NetworkClient()
+    @SceneBuilder var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(networkClient)
         }
     }
 }

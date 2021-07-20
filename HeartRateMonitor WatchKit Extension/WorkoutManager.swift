@@ -15,6 +15,7 @@ class WorkoutManager: NSObject, ObservableObject {
         }
     }
     
+    let wcViewModel = WCViewModel()
     let healthStore = HKHealthStore()
     var session: HKWorkoutSession?
     var builder: HKLiveWorkoutBuilder?
@@ -115,11 +116,14 @@ class WorkoutManager: NSObject, ObservableObject {
         let heartRateUnit = HKUnit(from: "count/min")
         let averageHeartRate = statistics.averageQuantity()?.doubleValue(for: heartRateUnit) ?? 0
         let heartRate = statistics.mostRecentQuantity()?.doubleValue(for: heartRateUnit) ?? 0
-        print("average heart rate: \(averageHeartRate)\nheart rate: \(heartRate)")
+        let timer = (builder?.elapsedTime ?? 0) * 1000
         
         DispatchQueue.main.async {
             self.averageHeartRate = averageHeartRate
             self.heartRate = heartRate
+            self.wcViewModel.session.sendMessage(["timer": String(timer), "heartRate": String(heartRate)], replyHandler: nil) { e in
+                print(e.localizedDescription)
+            }
         }
     }
     
