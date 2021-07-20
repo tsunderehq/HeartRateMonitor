@@ -1,0 +1,2 @@
+# HeartRateMonitor
+Apple Watchで心拍数を測定してUDPでWIndowsPCとかに送信するやつ
