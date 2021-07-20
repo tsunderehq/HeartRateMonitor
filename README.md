@@ -1,2 +1,5 @@
 # HeartRateMonitor
-Apple Watchで心拍数を測定してUDPでWIndowsPCとかに送信するやつ
+## Requirement
+ - Apple Watch
+ - iPhone
+ - Receiver (ex: WindowsPC)
