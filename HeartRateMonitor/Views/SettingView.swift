@@ -8,10 +8,7 @@
 import SwiftUI
 
 struct SettingView: View {
-    @EnvironmentObject var networkClient: NetworkClient
-    
-    @State var ip: String = "127.0.0.1"
-    @State var port: String = "5000"
+    @EnvironmentObject var viewModel: ViewModel
     
     var body: some View {
         VStack(alignment: .center) {
@@ -20,7 +17,7 @@ struct SettingView: View {
                     .padding(.leading, 16.0)
                     .font(.headline)
                 Spacer()
-                TextField("IP", text: $ip)
+                TextField("IP", text: $viewModel.ip)
                     .padding()
             }
             HStack {
@@ -28,28 +25,10 @@ struct SettingView: View {
                     .padding(.leading, 16.0)
                     .font(.headline)
                 Spacer()
-                TextField("Port", text: $port)
+                TextField("Port", text: $viewModel.port)
                     .padding()
             }
-            HStack {
-                Button(action: {
-                    self.networkClient.open(ip: self.ip, port: UInt16(self.port)!)
-                }) {
-                    Text("Connect")
-                        .padding(3)
-                        .foregroundColor(Color.white)
-                        .background(Color.blue)
-                }
-                Spacer()
-                Button(action: {
-                    self.networkClient.close()
-                }) {
-                    Text("Kill")
-                        .padding(3)
-                        .foregroundColor(Color.white)
-                        .background(Color.red)
-                }
-            }
+            Toggle("Connect", isOn: $viewModel.networkFlag).padding()
         }
         .frame(alignment: .center)
         .padding(10)
@@ -59,6 +38,6 @@ struct SettingView: View {
 struct SettingView_Previews: PreviewProvider {
     static var previews: some View {
         SettingView()
-            .environmentObject(NetworkClient())
+            .environmentObject(ViewModel())
     }
 }

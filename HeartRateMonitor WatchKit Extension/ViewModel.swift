@@ -1,5 +1,5 @@
 //
-//  WCViewModel.swift
+//  ViewModel.swift
 //  HeartRateMonitor WatchKit Extension
 //
 //  Created by Hiroya Kawase on 2021/07/19.
@@ -8,8 +8,7 @@
 import Foundation
 import WatchConnectivity
 
-final class WCViewModel: NSObject {
-    
+class ViewModel: NSObject, ObservableObject {
     var session: WCSession
     
     init(session: WCSession  = .default) {
@@ -20,10 +19,10 @@ final class WCViewModel: NSObject {
     }
 }
 
-extension WCViewModel: WCSessionDelegate {
+extension ViewModel: WCSessionDelegate {
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        if let error = error {
-            print(error.localizedDescription)
+        if let e = error {
+            print(e.localizedDescription)
         } else {
             print("The session has completed activation.")
         }

@@ -15,7 +15,7 @@ class WorkoutManager: NSObject, ObservableObject {
         }
     }
     
-    let wcViewModel = WCViewModel()
+    let viewModel = ViewModel()
     let healthStore = HKHealthStore()
     var session: HKWorkoutSession?
     var builder: HKLiveWorkoutBuilder?
@@ -68,11 +68,11 @@ class WorkoutManager: NSObject, ObservableObject {
         // Request authorization for those quantity types.
         healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { (success, error) in
             if let e = error {
-                print("error: \(e.localizedDescription)")
+                print("Error: \(e.localizedDescription)")
                 return
             }
             if success {
-                print("success")
+                print("[workoutManager] success: authorization")
             }
         }
     }
@@ -91,17 +91,17 @@ class WorkoutManager: NSObject, ObservableObject {
     }
     
     func pause() {
-        print("pause")
+        print("[workoutManager] pause")
         session?.pause()
     }
     
     func resume() {
-        print("resume")
+        print("[workoutManager] resume")
         session?.resume()
     }
     
     func endWorkout() {
-        print("end")
+        print("[workoutManager] end")
         session?.end()
     }
     
@@ -116,19 +116,19 @@ class WorkoutManager: NSObject, ObservableObject {
         let heartRateUnit = HKUnit(from: "count/min")
         let averageHeartRate = statistics.averageQuantity()?.doubleValue(for: heartRateUnit) ?? 0
         let heartRate = statistics.mostRecentQuantity()?.doubleValue(for: heartRateUnit) ?? 0
-        let timer = (builder?.elapsedTime ?? 0) * 1000
+        let time = (builder?.elapsedTime ?? 0) * 1000
+        self.viewModel.session.sendMessage(["time": String(time), "heartRate": String(heartRate)], replyHandler: nil) { e in
+            print("Error: \(e.localizedDescription)")
+        }
         
         DispatchQueue.main.async {
             self.averageHeartRate = averageHeartRate
             self.heartRate = heartRate
-            self.wcViewModel.session.sendMessage(["timer": String(timer), "heartRate": String(heartRate)], replyHandler: nil) { e in
-                print(e.localizedDescription)
-            }
         }
     }
     
     func resetWorkout() {
-        print("reset")
+        print("[workoutManager] reset")
         workoutType = nil
         builder = nil
         workout = nil

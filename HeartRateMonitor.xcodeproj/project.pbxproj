@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC617E5F26A746DE004F34E9 /* WCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC617E5E26A746DE004F34E9 /* WCViewModel.swift */; };
+		BC617E5F26A746DE004F34E9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC617E5E26A746DE004F34E9 /* ViewModel.swift */; };
 		BC617E6126A746FC004F34E9 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC617E6026A746FC004F34E9 /* NetworkClient.swift */; };
-		BC617E6326A747D3004F34E9 /* WCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC617E6226A747D3004F34E9 /* WCViewModel.swift */; };
+		BC617E6326A747D3004F34E9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC617E6226A747D3004F34E9 /* ViewModel.swift */; };
 		BC617E6726A76786004F34E9 /* LoggingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC617E6626A76786004F34E9 /* LoggingView.swift */; };
 		BC85431C26969C3F006B3DF8 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85431B26969C3F006B3DF8 /* SettingView.swift */; };
 		BCF30E972696818100CEDDCC /* HeartRateMonitorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF30E962696818100CEDDCC /* HeartRateMonitorApp.swift */; };
@@ -75,9 +75,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BC617E5E26A746DE004F34E9 /* WCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCViewModel.swift; sourceTree = "<group>"; };
+		BC617E5E26A746DE004F34E9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		BC617E6026A746FC004F34E9 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
-		BC617E6226A747D3004F34E9 /* WCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCViewModel.swift; sourceTree = "<group>"; };
+		BC617E6226A747D3004F34E9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		BC617E6626A76786004F34E9 /* LoggingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingView.swift; sourceTree = "<group>"; };
 		BC85431B26969C3F006B3DF8 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		BCF30E932696818100CEDDCC /* HeartRateMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeartRateMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,7 +158,7 @@
 		BCF30E952696818100CEDDCC /* HeartRateMonitor */ = {
 			isa = PBXGroup;
 			children = (
-				BC617E5E26A746DE004F34E9 /* WCViewModel.swift */,
+				BC617E5E26A746DE004F34E9 /* ViewModel.swift */,
 				BC617E6026A746FC004F34E9 /* NetworkClient.swift */,
 				BC85431426968ADC006B3DF8 /* Views */,
 				BCF30E962696818100CEDDCC /* HeartRateMonitorApp.swift */,
@@ -189,7 +189,7 @@
 		BCF30EB22696818300CEDDCC /* HeartRateMonitor WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				BC617E6226A747D3004F34E9 /* WCViewModel.swift */,
+				BC617E6226A747D3004F34E9 /* ViewModel.swift */,
 				BCF30ED0269682FB00CEDDCC /* WorkoutManager.swift */,
 				BCF30ED32696832200CEDDCC /* Views */,
 				BCF30EB52696818300CEDDCC /* HeartRateMonitorApp.swift */,
@@ -365,7 +365,7 @@
 				BCF30E992696818100CEDDCC /* ContentView.swift in Sources */,
 				BC85431C26969C3F006B3DF8 /* SettingView.swift in Sources */,
 				BCF30E972696818100CEDDCC /* HeartRateMonitorApp.swift in Sources */,
-				BC617E5F26A746DE004F34E9 /* WCViewModel.swift in Sources */,
+				BC617E5F26A746DE004F34E9 /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,7 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC617E6326A747D3004F34E9 /* WCViewModel.swift in Sources */,
+				BC617E6326A747D3004F34E9 /* ViewModel.swift in Sources */,
 				BCF30EDD2696837800CEDDCC /* ControlsView.swift in Sources */,
 				BCF30ED1269682FB00CEDDCC /* WorkoutManager.swift in Sources */,
 				BCF30EB62696818300CEDDCC /* HeartRateMonitorApp.swift in Sources */,

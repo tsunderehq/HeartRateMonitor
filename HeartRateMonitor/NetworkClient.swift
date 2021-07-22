@@ -18,39 +18,39 @@ class NetworkClient: ObservableObject {
         self.connection?.stateUpdateHandler = { (newState) in
             switch(newState) {
             case .ready:
-                print("Ready")
+                print("[NetworkClient] Ready")
             case .waiting(let e):
-                print("Waiting - \(e.localizedDescription)")
+                print("[NetworkClient] Waiting - \(e.localizedDescription)")
             case .failed(let e):
-                print("Failed - \(e.localizedDescription)")
+                print("[NetworkClient] Failed - \(e.localizedDescription)")
             case .setup:
-                print("Setup")
+                print("[NetworkClient] Setup")
             case .cancelled:
-                print("Cancelled")
+                print("[NetworkClient] Cancelled")
             case .preparing:
-                print("Preparing")
+                print("[NetworkClient] Preparing")
             default:
-                print("Default")
+                print("[NetworkClient] Default")
             }
         }
         let netQueue = DispatchQueue(label: "NetworkClient")
         self.connection?.start(queue: netQueue)
     }
     
-    func send(text: String) {
+    func send(_ text: String) {
         let data = text.data(using: .utf8)!
         
         self.connection?.send(content: data, completion: .contentProcessed { (error) in
             if let e = error {
-                print("Error: \(e.localizedDescription)")
+                print("[NetworkClient] Error: \(e.localizedDescription)")
             } else {
-                print("Sent: \(text) (\(data))")
+                print("[NetworkClient] Sent: \(text) (\(data))")
             }
         })
     }
     
     func close() {
-        print("Close")
-        connection?.cancel()
+        print("[NetworkClient] Close")
+        self.connection?.cancel()
     }
 }

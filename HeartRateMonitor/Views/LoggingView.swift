@@ -8,27 +8,27 @@
 import SwiftUI
 
 struct LoggingView: View {
-    @ObservedObject var wcViewModel = WCViewModel()
-    @State private var isReachable = "NO"
+    @EnvironmentObject var viewModel: ViewModel
     
     var body: some View {
-            VStack {
-                List {
-                    ForEach(self.wcViewModel.messages, id: \.self) { message in
-                        VStack(alignment: .leading) {
-                            Text(message)
-                                .font(.body)
-                                .padding(.vertical, 4.0)
-                        }
+        VStack {
+            List {
+                ForEach(self.viewModel.messages, id: \.self) { message in
+                    VStack(alignment: .leading) {
+                        Text(message)
+                            .font(.body)
+                            .padding(.vertical, 4.0)
                     }
                 }
-                .listStyle(PlainListStyle())
             }
+            .listStyle(PlainListStyle())
+        }
     }
 }
 
 struct LoggingView_Previews: PreviewProvider {
     static var previews: some View {
         LoggingView()
+            .environmentObject(ViewModel())
     }
 }
