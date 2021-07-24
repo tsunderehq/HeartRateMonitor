@@ -43,7 +43,7 @@ extension ViewModel: WCSessionDelegate {
         if let e = error {
             print(e.localizedDescription)
         } else {
-            print("The session has completed activation.")
+            print("[WatchConnectivitySession] The session has completed activation.")
         }
     }
     func session(_ session: WCSession, didReceiveMessage message: [String: Any]) {
