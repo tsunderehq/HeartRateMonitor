@@ -13,18 +13,26 @@ struct StartView: View {
     var workoutType: HKWorkoutActivityType = .other
     
     var body: some View {
-        NavigationLink(
-            "Start",
-            destination: PagingView(),
-            tag: workoutType,
-            selection: $workoutManager.workoutType
-        )
-        .padding(
-            EdgeInsets(top: 15, leading: 5, bottom: 15, trailing: 5)
-        )
-        .onAppear(perform: {
-            workoutManager.requestAuthorization()
-        })
+        VStack {
+            NavigationLink(
+                "Start",
+                destination: PagingView(),
+                tag: workoutType,
+                selection: $workoutManager.workoutType
+            )
+            .padding(
+                EdgeInsets(top: 15, leading: 5, bottom: 0, trailing: 5)
+            )
+            Button {
+                workoutManager.resetWorkout()
+            } label: {
+                Text("Reset")
+            }
+            .foregroundColor(.red)
+            .padding(
+                EdgeInsets(top: 15, leading: 5, bottom: 0, trailing: 5)
+            )
+        }
     }
 }
 

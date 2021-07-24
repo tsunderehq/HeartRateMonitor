@@ -15,6 +15,9 @@ struct HeartRateMonitorApp: App {
         WindowGroup {
             NavigationView {
                 StartView()
+                    .onAppear(perform: {
+                        workoutManager.requestAuthorization()
+                    })
             }
             .environmentObject(workoutManager)
         }

@@ -18,21 +18,9 @@ struct ControlsView: View {
                     workoutManager.endWorkout()
                     presentationMode.wrappedValue.dismiss()
                 }, label: {
-                    Image(systemName: "xmark")
+                    Text("End")
                 })
                 .foregroundColor(.red)
-                .font(.title2)
-                Text("End")
-            }
-            VStack {
-                Button(action: {
-                    workoutManager.togglePause()
-                }, label: {
-                    Image(systemName: workoutManager.running ? "pause" : "play")
-                })
-                .foregroundColor(.yellow)
-                .font(.title2)
-                Text(workoutManager.running ? "Pause" : "Resume")
             }
         }
     }

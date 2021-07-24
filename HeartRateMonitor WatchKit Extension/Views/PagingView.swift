@@ -14,6 +14,7 @@ struct PagingView: View {
         VStack {
             MetricsView()
             ControlsView()
+                .padding(.top, 15)
         }
     }
 }
