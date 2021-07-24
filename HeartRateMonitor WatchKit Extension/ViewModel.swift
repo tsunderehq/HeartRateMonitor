@@ -24,7 +24,7 @@ extension ViewModel: WCSessionDelegate {
         if let e = error {
             print(e.localizedDescription)
         } else {
-            print("The session has completed activation.")
+            print("[WCSession] The session has completed activation.")
         }
     }
 }

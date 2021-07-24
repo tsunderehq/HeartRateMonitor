@@ -68,11 +68,11 @@ class WorkoutManager: NSObject, ObservableObject {
         // Request authorization for those quantity types.
         healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { (success, error) in
             if let e = error {
-                print("Error: \(e.localizedDescription)")
+                print("[workoutManager] Error: \(e.localizedDescription)")
                 return
             }
             if success {
-                print("[workoutManager] success: authorization")
+                print("[workoutManager] Success: authorization")
             }
         }
     }
@@ -91,17 +91,17 @@ class WorkoutManager: NSObject, ObservableObject {
     }
     
     func pause() {
-        print("[workoutManager] pause")
+        print("[workoutManager] Pause")
         session?.pause()
     }
     
     func resume() {
-        print("[workoutManager] resume")
+        print("[workoutManager] Resume")
         session?.resume()
     }
     
     func endWorkout() {
-        print("[workoutManager] end")
+        print("[workoutManager] End")
         session?.end()
     }
     
@@ -114,13 +114,13 @@ class WorkoutManager: NSObject, ObservableObject {
         guard let statistics = statistics else { return }
         
         let heartRateUnit = HKUnit(from: "count/min")
-        let averageHeartRate = statistics.averageQuantity()?.doubleValue(for: heartRateUnit) ?? 0
-        let heartRate = statistics.mostRecentQuantity()?.doubleValue(for: heartRateUnit) ?? 0
-        let time = (builder?.elapsedTime ?? 0) * 1000
+        let averageHeartRate = round(statistics.averageQuantity()?.doubleValue(for: heartRateUnit) ?? 0)
+        let heartRate = round(statistics.mostRecentQuantity()?.doubleValue(for: heartRateUnit) ?? 0)
+        let time = round((builder?.elapsedTime ?? 0) * 1000)
         self.viewModel.session.sendMessage(["time": String(time), "heartRate": String(heartRate)], replyHandler: nil) { e in
-            print("Error: \(e.localizedDescription)")
+            print("[workoutManager] Error: \(e.localizedDescription)")
         }
-        
+        print("[workoutManager] time: \(time), heartRate: \(heartRate)")
         DispatchQueue.main.async {
             self.averageHeartRate = averageHeartRate
             self.heartRate = heartRate
@@ -128,7 +128,7 @@ class WorkoutManager: NSObject, ObservableObject {
     }
     
     func resetWorkout() {
-        print("[workoutManager] reset")
+        print("[workoutManager] Reset")
         workoutType = nil
         builder = nil
         workout = nil
@@ -150,12 +150,10 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
         if toState == .ended {
             builder?.endCollection(withEnd: date) { (success, error) in
                 self.builder?.finishWorkout { (workout, error) in
+                    print("[workoutManager] " + workout!.debugDescription)
                     if let e = error {
-                        print("Error: \(e.localizedDescription)")
+                        print("[workoutManager] Error: \(e.localizedDescription)")
                         return
-                    }
-                    DispatchQueue.main.async {
-                        self.workout = workout
                     }
                 }
             }
