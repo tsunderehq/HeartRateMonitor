@@ -14,9 +14,12 @@ struct LoggingView: View {
         VStack {
             List {
                 ForEach(self.viewModel.messages, id: \.self) { message in
-                    VStack(alignment: .leading) {
-                        Text(message)
+                    VStack(alignment: .trailing, spacing: 0.0) {
+                        Text("heartRate: \(Int(message["heartRate"] ?? 0)) bpm")
                             .font(.body)
+                            .padding(.vertical, 4.0)
+                        Text("time: \(Int(message["time"] ?? 0)) ms")
+                            .font(.footnote)
                             .padding(.vertical, 4.0)
                     }
                 }

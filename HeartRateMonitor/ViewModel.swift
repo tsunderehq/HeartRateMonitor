@@ -27,7 +27,7 @@ class ViewModel: NSObject, ObservableObject {
     }
     
     // message list
-    @Published var messages: [String] = []
+    @Published var messages: [[String: Double]] = [[:]]
     
     init(session: WCSession = .default) {
         self.networkFlag = false
@@ -47,13 +47,13 @@ extension ViewModel: WCSessionDelegate {
         }
     }
     func session(_ session: WCSession, didReceiveMessage message: [String: Any]) {
-        let time = message["time"] as? String ?? "NaN"
-        let heartRate = message["heartRate"] as? String ?? "NaN"
+        let time = message["time"] as! Double
+        let heartRate = message["heartRate"] as! Double
         let text = "\(time),\(heartRate)"
         if self.networkFlag {
             self.networkClient.send(text + "\n")
             DispatchQueue.main.async {
-                self.messages.append(text)
+                self.messages.append(["time": time, "heartRate": heartRate])
             }
         }
     }

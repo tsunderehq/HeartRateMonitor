@@ -14,20 +14,6 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BCF30EA12696818300CEDDCC"
-               BuildableName = "HeartRateMonitor WatchKit App.app"
-               BlueprintName = "HeartRateMonitor WatchKit App"
-               ReferencedContainer = "container:HeartRateMonitor.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "BCF30E922696818100CEDDCC"
                BuildableName = "HeartRateMonitor.app"
                BlueprintName = "HeartRateMonitor"
@@ -64,15 +50,6 @@
             ReferencedContainer = "container:HeartRateMonitor.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BCF30EA12696818300CEDDCC"
-            BuildableName = "HeartRateMonitor WatchKit App.app"
-            BlueprintName = "HeartRateMonitor WatchKit App"
-            ReferencedContainer = "container:HeartRateMonitor.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -84,9 +61,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BCF30EA12696818300CEDDCC"
-            BuildableName = "HeartRateMonitor WatchKit App.app"
-            BlueprintName = "HeartRateMonitor WatchKit App"
+            BlueprintIdentifier = "BCF30E922696818100CEDDCC"
+            BuildableName = "HeartRateMonitor.app"
+            BlueprintName = "HeartRateMonitor"
             ReferencedContainer = "container:HeartRateMonitor.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

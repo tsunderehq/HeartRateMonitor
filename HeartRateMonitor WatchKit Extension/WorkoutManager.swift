@@ -117,7 +117,7 @@ class WorkoutManager: NSObject, ObservableObject {
         let averageHeartRate = round(statistics.averageQuantity()?.doubleValue(for: heartRateUnit) ?? 0)
         let heartRate = round(statistics.mostRecentQuantity()?.doubleValue(for: heartRateUnit) ?? 0)
         let time = round((builder?.elapsedTime ?? 0) * 1000)
-        self.viewModel.session.sendMessage(["time": String(time), "heartRate": String(heartRate)], replyHandler: nil) { e in
+        self.viewModel.session.sendMessage(["time": time, "heartRate": heartRate], replyHandler: nil) { e in
             print("[workoutManager] Error: \(e.localizedDescription)")
         }
         print("[workoutManager] time: \(time), heartRate: \(heartRate)")

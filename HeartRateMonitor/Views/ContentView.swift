@@ -17,7 +17,7 @@ struct ContentView: View {
                 LoggingView()
                 Spacer()
             }
-            .navigationBarTitle("HeartRateMonitor")
+            .navigationBarTitle("Heart Rate Monitor")
         }
     }
 }
