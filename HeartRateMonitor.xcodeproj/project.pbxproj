@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC0A374C26AD1BC200058CAE /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = BC0A374B26AD1BC200058CAE /* Charts */; };
 		BC617E5F26A746DE004F34E9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC617E5E26A746DE004F34E9 /* ViewModel.swift */; };
 		BC617E6126A746FC004F34E9 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC617E6026A746FC004F34E9 /* NetworkClient.swift */; };
 		BC617E6326A747D3004F34E9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC617E6226A747D3004F34E9 /* ViewModel.swift */; };
@@ -110,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC0A374C26AD1BC200058CAE /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +250,9 @@
 				BCF30EA52696818300CEDDCC /* PBXTargetDependency */,
 			);
 			name = HeartRateMonitor;
+			packageProductDependencies = (
+				BC0A374B26AD1BC200058CAE /* Charts */,
+			);
 			productName = HeartRateMonitor;
 			productReference = BCF30E932696818100CEDDCC /* HeartRateMonitor.app */;
 			productType = "com.apple.product-type.application";
@@ -315,6 +320,9 @@
 				Base,
 			);
 			mainGroup = BCF30E8A2696818000CEDDCC;
+			packageReferences = (
+				BC0A374A26AD1BC200058CAE /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = BCF30E942696818100CEDDCC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -691,6 +699,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BC0A374A26AD1BC200058CAE /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BC0A374B26AD1BC200058CAE /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BC0A374A26AD1BC200058CAE /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BCF30E8B2696818000CEDDCC /* Project object */;
 }
