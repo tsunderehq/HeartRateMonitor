@@ -13,8 +13,16 @@ class ViewModel: NSObject, ObservableObject {
     
     // network
     var networkClient = NetworkClient()
-    @Published var ip: String = ""
-    @Published var port: String = ""
+    @Published var ip: String {
+        didSet {
+            UserDefaults.standard.set(ip, forKey: "ip")
+        }
+    }
+    @Published var port: String {
+        didSet {
+            UserDefaults.standard.set(port, forKey: "port")
+        }
+    }
     @Published var networkFlag: Bool {
         didSet {
             if self.networkFlag {
@@ -30,6 +38,8 @@ class ViewModel: NSObject, ObservableObject {
     @Published var messages: [[String: Double]] = [[:]]
     
     init(session: WCSession = .default) {
+        self.ip = UserDefaults.standard.string(forKey: "ip") ?? "127.0.0.1"
+        self.port = UserDefaults.standard.string(forKey: "port") ?? "5000"
         self.networkFlag = false
         self.session = session
         super.init()
