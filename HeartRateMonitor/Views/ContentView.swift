@@ -14,8 +14,7 @@ struct ContentView: View {
             VStack {
                 SettingView()
                     .padding(10)
-                LoggingView()
-                Spacer()
+                ChartView()
             }
             .navigationBarTitle("Heart Rate Monitor")
         }

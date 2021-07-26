@@ -35,7 +35,7 @@ class ViewModel: NSObject, ObservableObject {
     }
     
     // message list
-    @Published var messages: [[String: Double]] = [[:]]
+    @Published var messages: [[String: Double]] = []
     
     init(session: WCSession = .default) {
         self.ip = UserDefaults.standard.string(forKey: "ip") ?? "127.0.0.1"
