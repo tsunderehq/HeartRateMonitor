@@ -32,26 +32,34 @@ struct LineChart : UIViewRepresentable {
         chart.leftAxis.granularityEnabled = true
         chart.leftAxis.granularity = 1.0
         chart.legend.enabled = false
-
+        
         dataSet.circleRadius = 3.0
-        dataSet.circleColors = [UIColor.red]
+        dataSet.circleColors = [.red]
         dataSet.lineWidth = 2.0
-        dataSet.colors = [UIColor.red.withAlphaComponent(0.6)]
+        dataSet.colors = [.red.withAlphaComponent(0.6)]
         dataSet.highlightEnabled = false
         dataSet.drawValuesEnabled = false
         dataSet.mode = .cubicBezier
-        dataSet.drawFilledEnabled = true
         
         return chart
     }
     
     func updateUIView(_ uiView: LineChartView, context: Context) {
-        if self.viewModel.messages.count != 0 {
-            let chartDataEntry = ChartDataEntry(x: (self.viewModel.messages.last!["time"] ?? 0) / 1000,
-                                                y: self.viewModel.messages.last!["heartRate"] ?? 0)
+        let messages = self.viewModel.messages
+        if messages.count != 0 {
+            let chartDataEntry = ChartDataEntry(x: messages.last!["time"]! / 1000.0,
+                                                y: messages.last!["heartRate"]!)
             dataSet.append(chartDataEntry)
             chart.data = LineChartData(dataSet: dataSet)
             chart.animate(xAxisDuration: CATransaction.animationDuration(), easingOption: .linear)
+            
+            // draw average line
+            let averageHeartRate: Double = messages.map { $0["heartRate"]! } .reduce(0.0, +) / Double(messages.count)
+            let averageLine = ChartLimitLine(limit: averageHeartRate)
+            averageLine.lineColor = .orange
+            averageLine.lineDashLengths = [4]
+            chart.leftAxis.removeAllLimitLines()
+            chart.leftAxis.addLimitLine(averageLine)
         }
     }
     
