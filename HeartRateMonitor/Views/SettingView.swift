@@ -18,7 +18,6 @@ struct SettingView: View {
                     .font(.headline)
                 Spacer()
                 TextField("IP", text: $viewModel.ip)
-                    .padding()
             }
             HStack {
                 Text("Port")
@@ -26,9 +25,12 @@ struct SettingView: View {
                     .font(.headline)
                 Spacer()
                 TextField("Port", text: $viewModel.port)
-                    .padding()
             }
-            Toggle("Connect", isOn: $viewModel.networkFlag).padding()
+            Toggle(isOn: $viewModel.networkFlag) {
+                Text("Connect")
+                Image(systemName: "network")
+            }
+            .toggleStyle(SwitchToggleStyle(tint: .red))
         }
         .frame(alignment: .center)
         .padding(10)
