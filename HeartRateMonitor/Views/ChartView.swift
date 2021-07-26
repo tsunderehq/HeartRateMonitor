@@ -13,29 +13,40 @@ import Charts
 struct LineChart : UIViewRepresentable {
     @EnvironmentObject var viewModel: ViewModel
     private let chart = LineChartView()
+    private let dataSet = LineChartDataSet()
+    
     
     func makeUIView(context: Context) -> LineChartView {
+        // chart settings
         chart.noDataText = "No Data Available"
+        chart.xAxis.drawAxisLineEnabled = false
+        chart.rightAxis.enabled = false
+        chart.leftAxis.drawAxisLineEnabled = false
+        chart.leftAxis.granularityEnabled = true
+        chart.leftAxis.granularity = 1.0
+        chart.legend.enabled = false
+        
+        dataSet.circleRadius = 2.0
+        dataSet.drawValuesEnabled = false
+        dataSet.mode = .cubicBezier
+        
         return chart
     }
     
     func updateUIView(_ uiView: LineChartView, context: Context) {
-        let chartDataEntries: [ChartDataEntry] = self.viewModel.messages.map {
-            return ChartDataEntry(x: $0["time"] ?? 0,
-                                  y: $0["heartRate"] ?? 0)
+        if self.viewModel.messages.count != 0 {
+            let chartDataEntry = ChartDataEntry(x: (self.viewModel.messages.last!["time"] ?? 0),
+                                                y: self.viewModel.messages.last!["heartRate"] ?? 0)
+            dataSet.append(chartDataEntry)
+            chart.data = LineChartData(dataSet: dataSet)
+            chart.animate(xAxisDuration: CATransaction.animationDuration(), easingOption: .linear)
         }
-        let set = LineChartDataSet(entries: chartDataEntries)
-        set.colors = ChartColorTemplates.material()
-        let data = LineChartData(dataSet: set)
-        data.setValueFont(.systemFont(ofSize: 7, weight: .light))
-        chart.data = data
     }
     
     static func dismantleUIView(_ uiView: LineChartView, coordinator: Coordinator) {}
 }
 
 struct ChartView: View {
-    
     var body: some View {
         LineChart()
     }
